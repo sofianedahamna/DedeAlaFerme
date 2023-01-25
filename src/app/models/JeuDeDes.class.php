@@ -10,6 +10,7 @@ abstract class JeuDeDes extends Jeu
 
     public function __construct(array $params)
     {
+        $this->TableDeParLancer = array();
         $this->hydrate($params);
     }
 
@@ -30,6 +31,7 @@ abstract class JeuDeDes extends Jeu
     public function lancerDe()
     {
         while ($this->nbLancerDes > 0) {
+            //var_dump($this->nbLancerDes);
             $this->jetDeDes();
             $this->nbLancerDes--;
         }

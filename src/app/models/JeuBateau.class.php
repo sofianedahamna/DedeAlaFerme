@@ -1,18 +1,23 @@
 <?php
-use JeuDeDes;
+
+//use Partie;
 
 class JeuBateau extends JeuDeDes{
     use Hydrate;
 	const capitaine = 6;
-    private  $capitaine;
-    private $equipage;
-    private  $bateau;
-    private $equipageComplet;
+    private bool $capitaine=false;
+    private  bool $equipage=false;
+    private  bool $bateau=false;
+    private   bool $equipageComplet =false;
 	public $partie;
 
 
-    public function __construct(array $params) {
-        $this->hydrate($params); 
+    public function __construct(array $params=null) {
+		if(is_array($params)){
+			$this->hydrate($params);
+		}
+		parent::__construct(array("nbDes" => 5, "nbLancerDes" => 3));
+		//$this->partie = new Partie($params);
     }
 
   
